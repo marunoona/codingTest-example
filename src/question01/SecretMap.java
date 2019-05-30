@@ -14,7 +14,7 @@ class SecretMap {
 
         makeArray();
 
-        printArray(operateArray());
+        System.out.println(Arrays.toString(printArray()));
     }
 
     private void scanNumber() {
@@ -24,7 +24,7 @@ class SecretMap {
         System.out.println(number);
     }
 
-    private void makeArray(){
+    private void makeArray() {
         array1 = fillArray();
         array2 = fillArray();
         System.out.println(Arrays.toString(array1));
@@ -47,30 +47,19 @@ class SecretMap {
         return array;
     }
 
-    private int[] operateArray() {
-        int[] opArray = new int[number];
-        for (int i = 0; i < number; i++) {
-            int opNum = array1[i] | array2[i];
-            opArray[i] = opNum;
-        }
-        return opArray;
-    }
 
-    private void printArray(int[] array) {
+    private String[] printArray() {
         String[] result = new String[number];
-        int index = 0;
-        for (int num : array) {
-            String string = String.format("%05d", Integer.parseInt(Integer.toBinaryString(num)));
-            for (int i = 0; i < string.length(); i++) {
-                if (string.charAt(i) == '0') {
-                    string = string.replace("0", " ");
-                } else if (string.charAt(i) == '1') {
-                    string = string.replace("1", "#");
-                }
-            }
-            result[index] = string;
-            index++;
+        for (int i = 0; i < number; i++) {
+            result[i] = Integer.toBinaryString(array1[i] | array2[i]);
         }
-        System.out.println(Arrays.toString(result));
+
+        for (int i = 0; i < number; i++) {
+            result[i] = String.format("%" + number + "s", result[i]);
+            result[i] = result[i].replaceAll("1", "#");
+            result[i] = result[i].replaceAll("0", " ");
+        }
+
+        return result;
     }
 }

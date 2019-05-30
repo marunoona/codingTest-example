@@ -23,7 +23,7 @@ public class DartsGame {
         System.out.println(scoreList);
         int result = 0;
         int pow = 0;
-        int empty = 0;
+        int empty;
         for (int i = 0; i < scoreList.size(); i++) {
             String score = scoreList.get(i);
             int first = Integer.parseInt(score.replaceAll("[^0-9]",""));
@@ -40,11 +40,11 @@ public class DartsGame {
                     pow = (int) Math.pow(first, 3);
                     break;
             }
-            if (i == 0 && score.contains("*")) {
-                pow *= 2;
-            }
             if(score.contains("#")) {
                 pow *= (-1);
+            }
+            if (i == 0 && score.contains("*")) {
+                pow *= 2;
             }
             if ((i == 1 || i == 2) && score.contains("*")) {
                 result -= empty;
