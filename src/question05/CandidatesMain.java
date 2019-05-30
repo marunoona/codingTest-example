@@ -41,7 +41,7 @@ public class CandidatesMain {
         return true;
     }
 
-    public int solution(String[][] relation) {
+    private int solution(String[][] relation) {
         int answer = 0;
         int rowsize = relation.length;
         int colsize = relation[0].length;
