@@ -12,9 +12,9 @@ public class TapeEquilibrium {
         }
 
         //2. 작은거 구하기
-        for(int i = 1; i < A.length; i++){
-            before += A[i-1];
-            after =total - before;
+        for (int i = 1; i < A.length; i++) {
+            before += A[i - 1];
+            after = total - before;
             min = Math.min(min, Math.abs(before - after));
         }
         return min;
@@ -22,7 +22,7 @@ public class TapeEquilibrium {
 
     public static void main(String[] args) {
         TapeEquilibrium tapeEquilibrium = new TapeEquilibrium();
-        int[] A = {3,1,2,7,3};
+        int[] A = {3, 1, 2, 7, 3};
         System.out.println(tapeEquilibrium.solution(A));
     }
 }
