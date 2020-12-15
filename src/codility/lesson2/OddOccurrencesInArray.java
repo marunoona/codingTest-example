@@ -1,4 +1,4 @@
-package codility;
+package codility.lesson2;
 
 public class OddOccurrencesInArray {
     public int solution(int[] A) {
