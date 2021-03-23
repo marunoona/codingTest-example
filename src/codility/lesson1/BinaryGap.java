@@ -24,6 +24,7 @@ public class BinaryGap {
 
     public static void main(String[] args) {
         BinaryGap binaryGap = new BinaryGap();
-        System.out.println(binaryGap.solution(9));
+        System.out.println(binaryGap.solution(529));
+        System.out.println(binaryGap.solution(32));
     }
 }
