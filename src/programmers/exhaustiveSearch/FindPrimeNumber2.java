@@ -1,4 +1,4 @@
-package programmers;
+package programmers.exhaustiveSearch;
 
 import java.util.HashSet;
 
